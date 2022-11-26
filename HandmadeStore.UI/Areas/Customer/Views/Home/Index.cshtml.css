@@ -1,0 +1,5 @@
+﻿.card-img-top {
+    width: 80%;
+    align-self: center;
+    object-fit: contain;
+}

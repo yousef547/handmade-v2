@@ -1,0 +1,17 @@
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.deps.json
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.runtimeconfig.json
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.dll
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.pdb
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.Models.dll
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.Models.pdb
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.csproj.AssemblyReference.cache
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.AssemblyInfoInputs.cache
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.AssemblyInfo.cs
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.csproj.CoreCompileInputs.cache
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.csproj.CopyComplete
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.dll
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\refint\HandmadeStore.DataAccess.dll
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.pdb
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.genruntimeconfig.cache
+D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\ref\HandmadeStore.DataAccess.dll
