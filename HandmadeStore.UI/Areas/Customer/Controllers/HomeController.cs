@@ -53,7 +53,8 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
                 _unitOfWork.CartItem.Add(cartItem);
             }else
             {
-                _unitOfWork.CartItem.Update(cartItem);
+                cartFromDb.Count=cartItem.Count;
+                _unitOfWork.CartItem.Update(cartFromDb);
             }
             _unitOfWork.Save();
             return RedirectToAction(nameof(Index));
