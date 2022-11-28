@@ -31,7 +31,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
         public IActionResult Details(int productId)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var cartFromDb = _unitOfWork.CartItem.GetFirstOrDefault(x => x.ApplicationUserId == userId && x.Id == productId);
+            var cartFromDb = _unitOfWork.CartItem.GetFirstOrDefault(x => x.ApplicationUserId == userId && x.ProductId == productId);
 
             CartItem cartItem = new()
             {
@@ -47,7 +47,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             cartItem.ApplicationUserId = userId;
-            var cartFromDb = _unitOfWork.CartItem.GetFirstOrDefault(x => x.ApplicationUserId == userId && x.Id == cartItem.ProductId);
+            var cartFromDb = _unitOfWork.CartItem.GetFirstOrDefault(x => x.ApplicationUserId == userId && x.ProductId == cartItem.ProductId);
             if(cartFromDb is null)
             {
                 _unitOfWork.CartItem.Add(cartItem);
