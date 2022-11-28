@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\New folder\\MVC\\7-Identity-20220911T130334Z-001\\7-Identity\\82-Scaffold Identity\\HandmadeStore\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {}
+    "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {}
   },
   "projects": {
-    "D:\\New folder\\MVC\\7-Identity-20220911T130334Z-001\\7-Identity\\82-Scaffold Identity\\HandmadeStore\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
+    "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\New folder\\MVC\\7-Identity-20220911T130334Z-001\\7-Identity\\82-Scaffold Identity\\HandmadeStore\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
+        "projectUniqueName": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
         "projectName": "HandmadeStore.Models",
-        "projectPath": "D:\\New folder\\MVC\\7-Identity-20220911T130334Z-001\\7-Identity\\82-Scaffold Identity\\HandmadeStore\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
-        "packagesPath": "C:\\Users\\AL_hamd\\.nuget\\packages\\",
-        "outputPath": "D:\\New folder\\MVC\\7-Identity-20220911T130334Z-001\\7-Identity\\82-Scaffold Identity\\HandmadeStore\\HandmadeStore.Models\\obj\\",
+        "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
+        "packagesPath": "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\",
+        "outputPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\AL_hamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Youssef Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -64,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

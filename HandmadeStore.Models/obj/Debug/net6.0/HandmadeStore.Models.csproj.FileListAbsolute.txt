@@ -10,3 +10,15 @@ D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identit
 D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.Models\obj\Debug\net6.0\refint\HandmadeStore.Models.dll
 D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.pdb
 D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.Models\obj\Debug\net6.0\ref\HandmadeStore.Models.dll
+E:\projects\handmade-v2\HandmadeStore.Models\bin\Debug\net6.0\HandmadeStore.Models.deps.json
+E:\projects\handmade-v2\HandmadeStore.Models\bin\Debug\net6.0\HandmadeStore.Models.dll
+E:\projects\handmade-v2\HandmadeStore.Models\bin\Debug\net6.0\HandmadeStore.Models.pdb
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.csproj.AssemblyReference.cache
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.GeneratedMSBuildEditorConfig.editorconfig
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.AssemblyInfoInputs.cache
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.AssemblyInfo.cs
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.csproj.CoreCompileInputs.cache
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.dll
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\refint\HandmadeStore.Models.dll
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.pdb
+E:\projects\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\ref\HandmadeStore.Models.dll

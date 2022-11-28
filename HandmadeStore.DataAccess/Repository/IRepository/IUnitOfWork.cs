@@ -12,6 +12,8 @@ namespace HandmadeStore.DataAccess.Repository.IRepository
         IBrandRepository Brand { get; }
         IProductRepository Product { get; }
         IShopRepository Shop { get; }
+        IApplicationUserRepository ApplicationUser { get; }
+        ICartItemRepository CartItem { get; }
         void Save();
     }
 }

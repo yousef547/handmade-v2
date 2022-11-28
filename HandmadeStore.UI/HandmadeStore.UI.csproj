@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HandmadeStore.DataAccess\HandmadeStore.DataAccess.csproj" />
     <ProjectReference Include="..\HandmadeStore.Models\HandmadeStore.Models.csproj" />
+    <ProjectReference Include="..\HandmadeStore.Utility\HandmadeStore.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -16,5 +16,6 @@ namespace HandmadeStore.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Shop> Shops { get; set; }
+        public DbSet<CartItem> CartItems { get; set; }
     }
 }

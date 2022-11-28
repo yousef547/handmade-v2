@@ -10,6 +10,7 @@
         "dependencies": {
           "HandmadeStore.DataAccess": "1.0.0",
           "HandmadeStore.Models": "1.0.0",
+          "HandmadeStore.Utility": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8",
           "Microsoft.AspNetCore.Identity.UI": "6.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
@@ -2593,6 +2594,14 @@
         "runtime": {
           "HandmadeStore.Models.dll": {}
         }
+      },
+      "HandmadeStore.Utility/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "6.0.8"
+        },
+        "runtime": {
+          "HandmadeStore.Utility.dll": {}
+        }
       }
     }
   },
@@ -4127,6 +4136,11 @@
       "sha512": ""
     },
     "HandmadeStore.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "HandmadeStore.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

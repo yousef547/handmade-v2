@@ -15,3 +15,20 @@ D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identit
 D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.pdb
 D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.genruntimeconfig.cache
 D:\New folder\MVC\7-Identity-20220911T130334Z-001\7-Identity\82-Scaffold Identity\HandmadeStore\HandmadeStore.DataAccess\obj\Debug\net6.0\ref\HandmadeStore.DataAccess.dll
+E:\projects\handmade-v2\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.deps.json
+E:\projects\handmade-v2\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.runtimeconfig.json
+E:\projects\handmade-v2\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.dll
+E:\projects\handmade-v2\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.DataAccess.pdb
+E:\projects\handmade-v2\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.Models.dll
+E:\projects\handmade-v2\HandmadeStore.DataAccess\bin\Debug\net6.0\HandmadeStore.Models.pdb
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.csproj.AssemblyReference.cache
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.AssemblyInfoInputs.cache
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.AssemblyInfo.cs
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.csproj.CoreCompileInputs.cache
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.csproj.CopyComplete
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.dll
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\refint\HandmadeStore.DataAccess.dll
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.pdb
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\HandmadeStore.DataAccess.genruntimeconfig.cache
+E:\projects\handmade-v2\HandmadeStore.DataAccess\obj\Debug\net6.0\ref\HandmadeStore.DataAccess.dll
