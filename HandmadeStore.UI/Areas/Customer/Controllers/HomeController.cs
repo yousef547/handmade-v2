@@ -35,7 +35,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
 
             CartItem cartItem = new()
             {
-                Count = cartFromDb == null?0: cartFromDb.Count,
+                Count = cartFromDb == null?1: cartFromDb.Count,
                 ProductId = productId,
                 Product = _unitOfWork.Product.GetFirstOrDefault(p => p.Id == productId, includeProperties: "Category,Brand")
             };

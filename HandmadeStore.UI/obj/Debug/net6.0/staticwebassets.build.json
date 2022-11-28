@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "I78ojjvPv65Xiu9/54DN6ZtWXtzm7qgnhVDOQoPOawo=",
+  "Hash": "dlURKvmdB4IyyOxNnOrdIxCOu40JZFi2vKuOE+TD3eY=",
   "Source": "HandmadeStore.UI",
   "BasePath": "_content/HandmadeStore.UI",
   "Mode": "Default",
@@ -1154,6 +1154,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\products\\2f62ca23-7e11-42b0-a7f4-47a9e66af2c0.jpg"
+    },
+    {
+      "Identity": "E:\\Home2\\handmade-v2\\HandmadeStore.UI\\wwwroot\\images\\products\\3e8b079c-09fd-4951-93dd-edbf82b9a099.jpg",
+      "SourceId": "HandmadeStore.UI",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Home2\\handmade-v2\\HandmadeStore.UI\\wwwroot\\",
+      "BasePath": "_content/HandmadeStore.UI",
+      "RelativePath": "images/products/3e8b079c-09fd-4951-93dd-edbf82b9a099.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\products\\3e8b079c-09fd-4951-93dd-edbf82b9a099.jpg"
     },
     {
       "Identity": "E:\\Home2\\handmade-v2\\HandmadeStore.UI\\wwwroot\\images\\products\\4015abed-f544-4217-9eeb-93980dcc0e73.jpeg",

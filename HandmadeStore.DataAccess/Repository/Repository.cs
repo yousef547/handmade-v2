@@ -32,9 +32,13 @@ namespace HandmadeStore.DataAccess.Repository
         }
 
         //includeProperties="Category,Brand"
-        public IEnumerable<T> GetAll(string includeProperties = null)
+        public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter=null, string includeProperties = null)
         {
             IQueryable<T> query = _dbSet.AsQueryable();
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
             if (includeProperties != null)
             {
                 foreach (var includeProperty in includeProperties.Split(new char[] { ',' },
