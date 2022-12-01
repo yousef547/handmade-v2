@@ -1,6 +1,8 @@
 ﻿using HandmadeStore.DataAccess.Repository.IRepository;
 using HandmadeStore.Models;
+using HandmadeStore.Models.Models;
 using HandmadeStore.Models.Models.ViewModels;
+using HandmadeStore.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
@@ -35,6 +37,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
         }
 
 
+
         public IActionResult Increment(int cartId)
         {
             var cart = _unitOfWork.CartItem.GetFirstOrDefault(x => x.Id == cartId);
@@ -64,7 +67,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
         public IActionResult Delete(int cartId)
         {
             var cart = _unitOfWork.CartItem.GetFirstOrDefault(x => x.Id == cartId);
-            if(cart == null)
+            if (cart == null)
             {
                 return NotFound();
             }
@@ -91,5 +94,68 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
                 }
             }
         }
+
+        public IActionResult Summery()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            cartVM = new CartVM()
+            {
+                CartItems = _unitOfWork.CartItem.GetAll(x => x.ApplicationUserId == userId, includeProperties: "Product"),
+                OrderHeader = new()
+
+            };
+            cartVM.OrderHeader.ApplicationUser = _unitOfWork.ApplicationUser.GetFirstOrDefault(x => x.Id == userId);
+            cartVM.OrderHeader.Name = cartVM.OrderHeader.ApplicationUser.Name;
+            cartVM.OrderHeader.PhoneNumber = cartVM.OrderHeader.ApplicationUser.PhoneNumber;
+            cartVM.OrderHeader.StreetAddress = cartVM.OrderHeader.ApplicationUser.StreetAdress;
+            cartVM.OrderHeader.City = cartVM.OrderHeader.ApplicationUser.City;
+            cartVM.OrderHeader.PostalCode = cartVM.OrderHeader.ApplicationUser.PostalCode;
+
+            foreach (var item in cartVM.CartItems)
+            {
+                item.Price = GetPrice(item.Count, item.Product.Price, item.Product.Price10Plus, item.Product.Price30Plus);
+                cartVM.CartTotle += (item.Price * item.Count);
+                cartVM.OrderHeader.OrderTotal += (item.Price * item.Count);
+                cartVM.PriceCount += item.Count;
+            }
+            return View(cartVM);
+        }
+
+        [HttpPost]
+        [ActionName("Summery")]
+        public IActionResult SummeryPost(CartVM cartVM)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            cartVM.CartItems = _unitOfWork.CartItem.GetAll(x => x.ApplicationUserId == userId, includeProperties: "Product");
+            cartVM.OrderHeader.PaymentStatus = SD.PaymentStatusPending;
+            cartVM.OrderHeader.OrderStatus = SD.StatusPending;
+            cartVM.OrderHeader.OrderDate = DateTime.Now;
+            cartVM.OrderHeader.ApplicationUserId = userId;
+            foreach (var item in cartVM.CartItems)
+            {
+                item.Price = GetPrice(item.Count, item.Product.Price, item.Product.Price10Plus, item.Product.Price30Plus);
+                cartVM.CartTotle += (item.Price * item.Count);
+                cartVM.OrderHeader.OrderTotal += (item.Price * item.Count);
+                cartVM.PriceCount += item.Count;
+            }
+            _unitOfWork.OrderHeader.Add(cartVM.OrderHeader);
+            _unitOfWork.Save();
+            foreach (var item in cartVM.CartItems)
+            {
+                OrderDetail orderDetails = new()
+                {
+                    ProductId = item.ProductId,
+                    OrderId = cartVM.OrderHeader.Id,
+                    Price = item.Price,
+                    Count = item.Count
+                };
+                _unitOfWork.OrderDetail.Add(orderDetails);
+                _unitOfWork.Save();
+            }
+            _unitOfWork.CartItem.RemoveRange(cartVM.CartItems);
+            _unitOfWork.Save();
+            return RedirectToAction("Index","Home");
+        }
+
     }
 }

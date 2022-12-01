@@ -9,6 +9,7 @@ namespace HandmadeStore.Models.Models.ViewModels
     public class CartVM
     {
         public IEnumerable<CartItem> CartItems { get; set; }
+        public OrderHeader OrderHeader { get; set; }
         public double CartTotle { get; set; }
         public int PriceCount { get; set; }
     }

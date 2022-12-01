@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Shopping Cart Details";
 }
-<form method="post">
+<form>
     <div class="container-fluid">
         <div class="card">
             <div class="card-header bg-primary text-light">
@@ -82,7 +82,7 @@
                 <div class="card-footer">
                     <div class="d-flex justify-content-between">
                         <a asp-action="Index" asp-controller="Home" class="btn btn-info w-50 me-1"><i class="bi bi-bag"></i>&nbsp; Continue Shopping</a>
-                        <button type="submit" class="btn btn-primary w-50 me-1"><i class="bi bi-credit-card"></i>&nbsp; Proceed To Pay</button>
+                        <a asp-action="Summery"  class="btn btn-primary w-50 me-1"><i class="bi bi-credit-card"></i>&nbsp; Proceed To Pay</a>
                     </div>
                 </div>
             }

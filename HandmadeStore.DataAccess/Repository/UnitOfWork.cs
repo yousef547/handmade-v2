@@ -17,6 +17,8 @@ namespace HandmadeStore.DataAccess.Repository
         public IShopRepository Shop { get; private set; }
         public IApplicationUserRepository ApplicationUser { get; private set; }
         public ICartItemRepository CartItem { get; private set; }
+        public IOrderDetailRepository OrderDetail { get; private set; }
+        public IOrderHeaderRepository OrderHeader { get; private set; }
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -27,6 +29,8 @@ namespace HandmadeStore.DataAccess.Repository
             Shop = new ShopRepository(context);
             ApplicationUser = new ApplicationUserRepository(context);
             CartItem = new CartItemRepository(context);
+            OrderDetail = new OrderDetailRepository(context);
+            OrderHeader = new OrderHeaderRepository(context);
         }
 
         public void Save()
