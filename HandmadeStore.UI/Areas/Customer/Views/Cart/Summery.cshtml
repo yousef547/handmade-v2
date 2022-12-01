@@ -1,6 +1,9 @@
 ﻿@using HandmadeStore.Models.Models.ViewModels
+@using HandmadeStore.Utility
+@using Microsoft.Extensions.Options
 @model CartVM
-@{
+@inject IOptions<StripeSettings> Stripe
+@{ 
     ViewData["Title"] = "Order Summary";
 }
 <form method="post">

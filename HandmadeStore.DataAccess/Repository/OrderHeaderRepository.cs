@@ -23,6 +23,15 @@ namespace HandmadeStore.DataAccess.Repository
         {
             _context.OrderHeaders.Update(orderHeader);
         }
+
+        public void UpdateOrderPayment(int id, string sessionId, string paymentIntentId)
+        {
+            var OrderPayment = _context.OrderHeaders.FirstOrDefault(x => x.Id == id);
+            OrderPayment.PaymentDate = DateTime.Now;
+            OrderPayment.SessionId = sessionId;
+            OrderPayment.PaymentIntentId = paymentIntentId;
+        }
+
         public void UpdateStatus(int id, string OrderStatus, string paymentStatus = null)
         {
             var orderHeader = _context.OrderHeaders.FirstOrDefault(x => x.Id == id);

@@ -12,6 +12,6 @@ namespace HandmadeStore.DataAccess.Repository.IRepository
     {
         void Update(OrderHeader orderHeader);
         void UpdateStatus(int id, string OrderStatus, string paymentStatus = null);
-
+        void UpdateOrderPayment(int id, string sessionId, string paymentIntentId);
     }
 }

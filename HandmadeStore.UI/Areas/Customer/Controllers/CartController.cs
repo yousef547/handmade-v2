@@ -5,6 +5,8 @@ using HandmadeStore.Models.Models.ViewModels;
 using HandmadeStore.Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Stripe.Checkout;
 using System.Security.Claims;
 
 namespace HandmadeStore.UI.Areas.Customer.Controllers
@@ -152,10 +154,71 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
                 _unitOfWork.OrderDetail.Add(orderDetails);
                 _unitOfWork.Save();
             }
-            _unitOfWork.CartItem.RemoveRange(cartVM.CartItems);
+            var domain = "https://localhost:44352/";
+            var options = new SessionCreateOptions
+            {
+                LineItems = new List<SessionLineItemOptions>(),
+
+                Mode = "payment",
+                PaymentMethodTypes = new List<string>()
+                {
+                    "card",
+                },
+                SuccessUrl = domain+$"customer/cart/OrderConfirmation?id={cartVM.OrderHeader.Id}",
+                CancelUrl = domain + $"customer/cart/index"
+            };
+
+            foreach(var item in cartVM.CartItems)
+            {
+                {
+                    var sessionLineItem = new SessionLineItemOptions
+                    {
+                        PriceData = new SessionLineItemPriceDataOptions
+                        {
+                            UnitAmount = (long)(item.Price*100),
+                            Currency = "epg",
+                            ProductData = new SessionLineItemPriceDataProductDataOptions
+                            {
+                                Name = item.Product.Name,
+                            },
+                        },
+                        Quantity = item.Count,
+                    };
+                    options.LineItems.Add(sessionLineItem);
+                }
+            }
+
+            var service = new SessionService();
+            Session session = service.Create(options);
+
+            _unitOfWork.OrderHeader.UpdateOrderPayment(cartVM.OrderHeader.Id, session.Id,session.PaymentIntentId);
             _unitOfWork.Save();
-            return RedirectToAction("Index","Home");
+            Response.Headers.Add("Location", session.Url);
+            return new StatusCodeResult(303);
+
+            //_unitOfWork.Save();
+            //return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult OrderConfirmation(int id)
+        {
+            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(x => x.Id == id);
+            var service = new SessionService();
+            Session session = service.Get(orderHeader.SessionId);
+            if (session.PaymentStatus.ToLower() == "Paid")
+            {
+                _unitOfWork.OrderHeader.UpdateStatus(id, SD.StatusApproved, SD.PaymentStatusApproved);
+                _unitOfWork.Save();
+            }
+            List<CartItem> cartItems = _unitOfWork.CartItem.GetAll(x=>x.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
+            _unitOfWork.CartItem.RemoveRange(cartItems);
+            _unitOfWork.Save();
+            return View(id);
         }
 
     }
 }
+
+
+
+

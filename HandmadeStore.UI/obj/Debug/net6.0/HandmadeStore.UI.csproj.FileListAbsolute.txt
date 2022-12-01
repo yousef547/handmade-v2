@@ -836,3 +836,4 @@ E:\Home2\handmade-v2\HandmadeStore.UI\obj\Debug\net6.0\refint\HandmadeStore.UI.d
 E:\Home2\handmade-v2\HandmadeStore.UI\obj\Debug\net6.0\HandmadeStore.UI.pdb
 E:\Home2\handmade-v2\HandmadeStore.UI\obj\Debug\net6.0\HandmadeStore.UI.genruntimeconfig.cache
 E:\Home2\handmade-v2\HandmadeStore.UI\obj\Debug\net6.0\ref\HandmadeStore.UI.dll
+E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Stripe.net.dll

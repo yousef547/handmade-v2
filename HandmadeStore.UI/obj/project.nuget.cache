@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jbxnD9kirFURCGI+n1QIvp+CvvMDEXjh1POeiURv2vTEMGSmHq+CNzKZbY7Rt6wAUzM3bR4Omxn+IH8KppSKeg==",
+  "dgSpecHash": "vGQwl07qui8ikyBO9WfpiWZuclwCaW/dCy9EMx2ffifpNlRpZTLK5JrZ9qSXH10jCd0kwigyKFDZwVU8hn2uSQ==",
   "success": true,
   "projectFilePath": "E:\\projects\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj",
   "expectedPackageFiles": [
@@ -138,6 +138,7 @@
     "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\stripe.net\\40.11.0\\stripe.net.40.11.0.nupkg.sha512",
     "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
