@@ -294,7 +294,6 @@ E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.AspNetCore.I
 E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
 E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.Build.Locator.dll
 E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -837,3 +836,6 @@ E:\Home2\handmade-v2\HandmadeStore.UI\obj\Debug\net6.0\HandmadeStore.UI.pdb
 E:\Home2\handmade-v2\HandmadeStore.UI\obj\Debug\net6.0\HandmadeStore.UI.genruntimeconfig.cache
 E:\Home2\handmade-v2\HandmadeStore.UI\obj\Debug\net6.0\ref\HandmadeStore.UI.dll
 E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Stripe.net.dll
+E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.Build.dll
+E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+E:\projects\handmade-v2\HandmadeStore.UI\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
