@@ -1,0 +1,15 @@
+﻿@using HandmadeStore.Models.Models
+
+@model Review
+
+
+
+<div class="card">
+    <form method="post">
+        <div class="text-center my-2">
+            <textarea asp-for="ReviewText" class="w-75"></textarea>
+            <button asp-action="addReview" type="submit" class="btn btn-info w-50">Add Review</button>
+        </div>
+    </form>   
+    <partial name="_Reviews"></partial>
+</div>

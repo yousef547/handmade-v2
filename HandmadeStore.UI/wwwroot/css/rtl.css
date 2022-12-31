@@ -1,0 +1,29 @@
+﻿body {
+    direction: rtl !important;
+    font-family: 'Cairo';
+}
+
+.dropdown-item {
+    text-align: right !important;
+}
+
+.form-floating > label {
+    font-weight: bold;
+    left: unset;
+    width: unset;
+    height: unset;
+    transform-origin: unset;
+}
+
+.seller {
+    text-align: left;
+}
+
+.ltr {
+    direction: ltr;
+    margin-top: 10px;
+}
+
+.rtl {
+    direction: rtl;
+}

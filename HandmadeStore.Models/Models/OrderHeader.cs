@@ -16,15 +16,15 @@ namespace HandmadeStore.Models.Models
         public ApplicationUser ApplicationUser { get; set; }
 
         [Required]
-        public DateTime OrderDate { get; set; }
-        public DateTime ShippingDate { get; set; }
+        public DateTime? OrderDate { get; set; }
+        public DateTime? ShippingDate { get; set; }
         public double OrderTotal { get; set; }
         public string OrderStatus { get; set; }
         public string PaymentStatus { get; set; }
         public string TrackingNumber { get; set; }
         public string Carrier { get; set; }
-        public DateTime PaymentDate { get; set; }
-        public DateTime PaymentDueDate { get; set; }
+        public DateTime? PaymentDate { get; set; }
+        public DateTime? PaymentDueDate { get; set; }
 
         [Required]
         public string Name { get; set; }

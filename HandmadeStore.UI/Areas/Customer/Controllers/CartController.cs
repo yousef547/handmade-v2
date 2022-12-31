@@ -4,6 +4,7 @@ using HandmadeStore.Models.Models;
 using HandmadeStore.Models.Models.ViewModels;
 using HandmadeStore.Utility;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Stripe.Checkout;
@@ -16,10 +17,13 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
     public class CartController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IEmailSender _emailSender;
+
         private CartVM cartVM { get; set; }
-        public CartController(IUnitOfWork unitOfWork)
+        public CartController(IUnitOfWork unitOfWork, IEmailSender emailSender)
         {
             _unitOfWork = unitOfWork;
+            this._emailSender = emailSender;
         }
         public IActionResult Index()
         {
@@ -46,6 +50,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
             cart.Count = cart.Count + 1;
             _unitOfWork.CartItem.Update(cart);
             _unitOfWork.Save();
+            HttpContext.Session.SetInt32(SD.CartSession, _unitOfWork.CartItem.GetPiecsCount());
             return RedirectToAction(nameof(Index));
         }
 
@@ -63,6 +68,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
                 _unitOfWork.CartItem.Update(cart);
             }
             _unitOfWork.Save();
+            HttpContext.Session.SetInt32(SD.CartSession, _unitOfWork.CartItem.GetPiecsCount());
             return RedirectToAction(nameof(Index));
         }
 
@@ -74,7 +80,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
                 return NotFound();
             }
             _unitOfWork.CartItem.Remove(cart);
-            _unitOfWork.Save();
+            _unitOfWork.Save(); HttpContext.Session.SetInt32(SD.CartSession, _unitOfWork.CartItem.GetPiecsCount());
             return RedirectToAction(nameof(Index));
 
         }
@@ -221,7 +227,7 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
 
         public IActionResult OrderConfirmation(int id)
         {
-            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(x => x.Id == id);
+            OrderHeader orderHeader = _unitOfWork.OrderHeader.GetFirstOrDefault(x => x.Id == id, includeProperties: "ApplicationUser");
             if (orderHeader.PaymentStatus != SD.PaymentStatusDelayedPayment)
             {
 
@@ -235,9 +241,11 @@ namespace HandmadeStore.UI.Areas.Customer.Controllers
                     _unitOfWork.Save();
                 }
             }
+            _emailSender.SendEmailAsync(orderHeader.ApplicationUser.Email, "New Order - Handmade Store", $"<h2>Order #{orderHeader.Id} Created Successfully ... Total : {orderHeader.OrderTotal} EGP</h2>");
             List<CartItem> cartItems = _unitOfWork.CartItem.GetAll(x => x.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
             _unitOfWork.CartItem.RemoveRange(cartItems);
             _unitOfWork.Save();
+            HttpContext.Session.SetInt32(SD.CartSession,0);
             return View(id);
         }
 

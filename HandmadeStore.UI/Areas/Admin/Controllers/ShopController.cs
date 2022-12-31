@@ -3,12 +3,15 @@ using HandmadeStore.DataAccess.Repository.IRepository;
 using HandmadeStore.Models;
 using HandmadeStore.Models.Models;
 using HandmadeStore.Models.Models.ViewModels;
+using HandmadeStore.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HandmadeStore.UI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin + "," + SD.Role_Moderator)]
     public class ShopController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

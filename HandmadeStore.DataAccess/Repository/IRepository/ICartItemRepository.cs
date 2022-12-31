@@ -10,6 +10,7 @@ namespace HandmadeStore.DataAccess.Repository.IRepository
 {
     public interface ICartItemRepository : IRepository<CartItem>
     {
+        int GetPiecsCount();
         void Update(CartItem cartItem);
     }
 }

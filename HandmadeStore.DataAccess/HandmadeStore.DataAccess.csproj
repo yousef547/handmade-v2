@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\HandmadeStore.Models\HandmadeStore.Models.csproj" />
+    <ProjectReference Include="..\HandmadeStore.Utility\HandmadeStore.Utility.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,12 +6,17 @@ namespace HandmadeStore.Models
     public class Product
     {
         public int Id { get; set; }
+
         [Required(ErrorMessage = "Enter product name"), StringLength(50), Display(Name = "Product Name")]
-
         public string Name { get; set; }
-        [Required(ErrorMessage = "Enter description"), StringLength(300)]
+        [Required(ErrorMessage = "Enter product name"), StringLength(50), Display(Name = "Product Arabic Name")]
+        public string ArabicName { get; set; }
 
+        [Required(ErrorMessage = "Enter description"), StringLength(300)]
         public string Description { get; set; }
+        [Display(Name = "Product Arabic description")]
+        [Required(ErrorMessage = "Enter description"), StringLength(300)]
+        public string ArabicDescription { get; set; }
 
         [Required(ErrorMessage = "Enter price"), Range(1, Double.PositiveInfinity)]
         public double? Price { get; set; }

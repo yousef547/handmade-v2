@@ -34,3 +34,15 @@ E:\Home2\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.
 E:\Home2\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\refint\HandmadeStore.Models.dll
 E:\Home2\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.pdb
 E:\Home2\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\ref\HandmadeStore.Models.dll
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\bin\Debug\net6.0\HandmadeStore.Models.deps.json
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\bin\Debug\net6.0\HandmadeStore.Models.dll
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\bin\Debug\net6.0\HandmadeStore.Models.pdb
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.csproj.AssemblyReference.cache
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.AssemblyInfoInputs.cache
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.AssemblyInfo.cs
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.csproj.CoreCompileInputs.cache
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.dll
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\refint\HandmadeStore.Models.dll
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\HandmadeStore.Models.pdb
+D:\New folder\MVC\handmade-v2\HandmadeStore.Models\obj\Debug\net6.0\ref\HandmadeStore.Models.dll

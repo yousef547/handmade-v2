@@ -1,15 +1,26 @@
 ﻿@page
+@using HandmadeStore.Utility
+@using Microsoft.Extensions.Localization
+
+@inject IStringLocalizer<RegisterModel> localizer
 @model RegisterModel
 @{
     ViewData["Title"] = "Register";
 }
 
-<h1>@ViewData["Title"]</h1>
+@if (User.IsInRole(SD.Role_Admin))
+{
+    <h1>@localizer["Create user Admin panal"]</h1>
+}
+else
+{
+    <h1>@localizer[ViewData["Title"].ToString()]</h1>
+}
 
 <div class="row">
     <div class="col-md-7">
         <form id="registerForm" class="row" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h2>Create a new account.</h2>
+            <h2>@localizer["Create a new account"]</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-floating col-12 p-1">
@@ -53,53 +64,69 @@
                 <label asp-for="Input.ConfirmPassword"></label>
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-            <div class="form-floating col-6 p-1">
-                <select asp-for="Input.Role" class="form-select" asp-items="@Model.Input.RoleList">
-                    <option disabled selected>--Select Role</option>
-                </select>
-            </div>
-            <div class="form-floating col-6 p-1">
-                <select asp-for="Input.ShopId" hidden class="form-select" asp-items="@Model.Input.ShopList">
-                    <option disabled selected>--Select Shop</option>
-                </select>
-            </div>
-            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+            @if (User.IsInRole(SD.Role_Admin))
+            {
+                <div class="form-floating col-6 p-1">
+                    <select asp-for="Input.Role" class="form-select" asp-items="@Model.Input.RoleList">
+                        <option disabled selected>--@localizer["Select Role"]</option>
+                    </select>
+                </div>
+                <div class="form-floating col-6 p-1">
+                    <select asp-for="Input.ShopId" hidden class="form-select" asp-items="@Model.Input.ShopList">
+                        <option disabled selected>--@localizer["Select Shop"]</option>
+                    </select>
+                </div>
+            }
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">@localizer["Register"]</button>
         </form>
     </div>
-    <div class="col-md-5">
-        <section>
-            <h3>Use another service to register.</h3>
-            <hr />
-            @{
-                if ((Model.ExternalLogins?.Count ?? 0) == 0)
-                {
-                    <div>
-                        <p>
-                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
-                            about setting up this ASP.NET application to support logging in via external services</a>.
-                        </p>
-                    </div>
-                }
-                else
-                {
-                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+    @if (!User.IsInRole(SD.Role_Admin))
+    {
+        <div class="col-md-5">
+            <section>
+                <h3>@localizer["Use another service to register"].</h3>
+                <hr />
+                @{
+                    if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                    {
                         <div>
                             <p>
-                                @foreach (var provider in Model.ExternalLogins)
-                                {
-                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
-                                }
+                                There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">
+                                    article
+                                    about setting up this ASP.NET application to support logging in via external services
+                                </a>.
                             </p>
                         </div>
-                    </form>
+                    }
+                    else
+                    {
+                        <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                            <div>
+                                <p>
+                                    @foreach (var provider in Model.ExternalLogins)
+                                    {
+                                        if (provider.Name == "Facebook")
+                                        {
+                                            <button type="submit" class="btn btn-primary col-12 btn-lg mb-2 p-2" name="provider" value="@provider.Name" title="@localizer["Log in using your"] @localizer[provider.DisplayName] @localizer["account"]"><i class="bi bi-facebook"></i> @localizer[provider.DisplayName]</button>
+                                    }
+
+                                        if (provider.Name == "Google")
+                                        {
+                                            <button type="submit" class="btn btn-danger col-12 btn-lg mb-2 p-2" name="provider" value="@provider.Name" title="@localizer["Log in using your"] @localizer[provider.DisplayName] @localizer["account"]"><i class="bi bi-google"></i>@localizer[provider.DisplayName]</button>
+                                        }
+                                    }
+                                </p>
+                            </div>
+                        </form>
+                    }
                 }
-            }
-        </section>
-    </div>
+            </section>
+        </div>
+    }
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+<partial name="_ValidationScriptsPartial" />
 <script>
     $(document).ready(() => {
         $('#Input_Role').change(() => {

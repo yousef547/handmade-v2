@@ -1,5 +1,14 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@inject IHttpContextAccessor HttpContextAccessor
+@inject IViewLocalizer localizer
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var culture = requestCulture.RequestCulture.Culture.Name;
+    var isArabic = culture == "ar-EG";
+}
+
+<!DOCTYPE html>
+<html lang="@(isArabic?"ar":"eg")">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,9 +17,15 @@
     <link rel="stylesheet" href="~/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HandmadeStore.UI.styles.css" asp-append-version="true" />
+    @if (isArabic)
+    {
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="~/css/rtl.css" />
+    }
 </head>
 <body>
     <header>
@@ -24,25 +39,59 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-light" asp-area="Customer" asp-controller="Home" asp-action="Index">@localizer["Home"]</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Admin Panel
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">Categories</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Brand" asp-action="Index">Brands</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">Products</a></li>
-                                <li><a class="dropdown-item" asp-area="Admin" asp-controller="Shop" asp-action="Index">Shops</a></li>
-
-                            </ul>
-                        </li>
-
                         <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="Customer" asp-controller="Cart" asp-action="Index"><i class="bi bi-cart"></i></a>
+                            <a class="nav-link text-light" asp-area="Customer" asp-controller="Home" asp-action="About">@localizer["About"]</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="Customer" asp-controller="Home" asp-action="Contact">@localizer["Contact"]</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+
+
+                            if (User.IsInRole(SD.Role_Admin) || User.IsInRole(SD.Role_Moderator))
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link text-light dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        @localizer["Admin Panel"]
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Category" asp-action="Index">@localizer["Categories"]</a></li>
+                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Brand" asp-action="Index">@localizer["Brands"]</a></li>
+                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Shop" asp-action="Index">@localizer["Shops"]</a></li>
+                                        <li><a class="dropdown-item" asp-area="Admin" asp-controller="Product" asp-action="Index">@localizer["Products"]</a></li>
+                                        <li class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item" asp-area="Identity" asp-action="/Account/Register">@localizer["Create User"]</a></li>
+
+
+                                    </ul>
+                                </li>
+                            }
+
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="Customer" asp-controller="Cart" asp-action="Index">
+                                    @await Component.InvokeAsync("Cart")
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" asp-area="Admin" asp-controller="Order" asp-action="Index">@localizer["Manage Orders"]</a>
+                            </li>
+                        }
                     </ul>
+
+                    <ul class="navbar-nav flex-grow-1">
+                        @if (!isArabic)
+                        {
+                            <li class="nav-item"><a class="nav-link text-light" href="/Customer/Home/SetCulture?lang=ar-EG&returnUrl=@Context.Request.GetEncodedPathAndQuery()">العربية</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link text-light" href="/Customer/Home/SetCulture?lang=en-US&returnUrl=@Context.Request.GetEncodedPathAndQuery()">English</a></li>
+                        }
+                    </ul>
+
                     <partial name="_LoginPartial" />
                 </div>
             </div>
@@ -57,15 +106,25 @@
 
     <footer class="border-top footer text-center text-light bg-primary">
         <div class="container">
-            &copy; Handmade Store - 2022
+            @localizer["&copy; Handmade Store - 2022"]
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js" asp-append-version="true"></script>
     <script src="https://cdn.tiny.cloud/1/2i7pnlj46cgmoyt61hldeumjioqio6h6gqgqbyvq2ek04fpb/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="~/js/signalr/dist/browser/signalr.min.js"></script>
+    <script src="~/js/SignalrClients/Reviews.js"></script>
+    <script src="~/js/SignalrClients/Message.js"></script>
+
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

@@ -1,5 +1,6 @@
 ﻿using HandmadeStore.Data;
 using HandmadeStore.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,10 @@ namespace HandmadeStore.DataAccess.Repository
         public ICartItemRepository CartItem { get; private set; }
         public IOrderDetailRepository OrderDetail { get; private set; }
         public IOrderHeaderRepository OrderHeader { get; private set; }
+       public IReviewRepository Review { get; private set; }
 
-        public UnitOfWork(ApplicationDbContext context)
+
+        public UnitOfWork(ApplicationDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
             Category = new CategoryRepository(context);
@@ -28,9 +31,11 @@ namespace HandmadeStore.DataAccess.Repository
             Product = new ProductRepository(context);
             Shop = new ShopRepository(context);
             ApplicationUser = new ApplicationUserRepository(context);
-            CartItem = new CartItemRepository(context);
+            CartItem = new CartItemRepository(context, httpContextAccessor);
             OrderDetail = new OrderDetailRepository(context);
             OrderHeader = new OrderHeaderRepository(context);
+            Review = new ReviewRepository(context);
+
         }
 
         public void Save()

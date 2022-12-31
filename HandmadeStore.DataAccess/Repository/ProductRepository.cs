@@ -27,7 +27,9 @@ namespace HandmadeStore.DataAccess.Repository
             if (productFromDb != null)
             {
                 productFromDb.Name = product.Name;
+                productFromDb.ArabicName = product.ArabicName;
                 productFromDb.Description = product.Description;
+                productFromDb.ArabicDescription = product.ArabicDescription;
                 productFromDb.Price = product.Price;
                 productFromDb.Price10Plus = product.Price10Plus;
                 productFromDb.Price30Plus = product.Price30Plus;

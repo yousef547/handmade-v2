@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\projects\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj": {}
+    "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj": {}
   },
   "projects": {
-    "E:\\projects\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj": {
+    "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj",
+        "projectUniqueName": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj",
         "projectName": "HandmadeStore.DataAccess",
-        "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\handmade-v2\\HandmadeStore.DataAccess\\obj\\",
+        "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\AL_hamd\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Youssef Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AL_hamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
-                "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj"
+              "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
+                "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj"
+              },
+              "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj": {
+                "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj"
               }
             }
           }
@@ -65,8 +68,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -75,21 +77,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
+    "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
+        "projectUniqueName": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
         "projectName": "HandmadeStore.Models",
-        "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
-        "packagesPath": "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\obj\\",
+        "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
+        "packagesPath": "C:\\Users\\AL_hamd\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Youssef Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AL_hamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -130,8 +132,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -140,21 +141,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\projects\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj": {
+    "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj",
+        "projectUniqueName": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj",
         "projectName": "HandmadeStore.UI",
-        "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj",
-        "packagesPath": "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\handmade-v2\\HandmadeStore.UI\\obj\\",
+        "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.UI\\HandmadeStore.UI.csproj",
+        "packagesPath": "C:\\Users\\AL_hamd\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Youssef Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AL_hamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -168,14 +169,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\projects\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj": {
-                "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj"
+              "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj": {
+                "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.DataAccess\\HandmadeStore.DataAccess.csproj"
               },
-              "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
-                "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj"
+              "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
+                "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj"
               },
-              "E:\\projects\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj": {
-                "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj"
+              "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj": {
+                "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj"
               }
             }
           }
@@ -190,6 +191,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Facebook": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[6.0.10, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.9, )"
@@ -210,11 +219,19 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[6.0.11, )"
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.2.0, )"
             },
             "Stripe.net": {
               "target": "Package",
               "version": "[40.11.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.0, )"
             }
           },
           "imports": [
@@ -223,8 +240,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -236,21 +252,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\projects\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj": {
+    "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj",
+        "projectUniqueName": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj",
         "projectName": "HandmadeStore.Utility",
-        "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj",
-        "packagesPath": "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\handmade-v2\\HandmadeStore.Utility\\obj\\",
+        "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\HandmadeStore.Utility.csproj",
+        "packagesPath": "C:\\Users\\AL_hamd\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Utility\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Youssef Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AL_hamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -276,9 +292,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.4.1, )"
+            },
+            "Mailjet.Api": {
+              "target": "Package",
+              "version": "[1.2.3, )"
+            },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
               "version": "[6.0.9, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.4.1, )"
             }
           },
           "imports": [
@@ -287,8 +315,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -297,7 +324,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     }

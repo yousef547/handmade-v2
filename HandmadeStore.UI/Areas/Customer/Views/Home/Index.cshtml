@@ -1,20 +1,34 @@
 ﻿@model IEnumerable<Product>
+@using Microsoft.AspNetCore.Localization
+
 @{
     ViewData["Title"] = "Catalog";
+}
+
+@{
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var culture = requestCulture.RequestCulture.Culture.Name;
+    var isArabic = culture == "ar-EG";
 }
 
 <div class="row" style="margin-top:-7px;">
     @foreach (var product in Model)
     {
-        <div class="col-lg-3 col-md-4 col-sm-6" >
+        <div class="col-lg-3 col-md-4 col-sm-6">
             <div class="row p-1">
                 <div class="col-12 p-1" style="border:2px solid #593196; border-radius: 5px;">
                     <div class="card border-0 ">
                         <img loading="lazy" src="@product.ImageUrl" class="card-img-top" />
                         <div class="card-body text-center">
                             <div class="pl-1">
-                                <p class="card-title h5 text-dark">@product.Category.Name</p>
-                                <p class="card-title h5 text-primary">@(product.Name.Count() > 25 ? product.Name.Substring(0, 25) : product.Name)</p>
+                                <p class="card-title h5 text-dark">@(isArabic?product.Category.ArabicName:product.Category.Name)</p>
+                                @if (!isArabic)
+                                {
+                                    <p class="card-title h5 text-primary">@(product.Name.Count() > 25 ? product.Name.Substring(0, 25) : product.Name)</p>
+                                }else
+                                {
+                                    <p class="card-title h5 text-primary">@(product.ArabicName.Count() > 25 ? product.ArabicName.Substring(0, 25) : product.ArabicName)</p>
+                                }
                             </div>
                             <div class="pl-1">
                                 <h5 class="card-title text-mute">Price: <b>@product.Price EGP</b></h5>

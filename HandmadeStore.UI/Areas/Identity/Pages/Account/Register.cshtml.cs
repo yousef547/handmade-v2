@@ -13,6 +13,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using HandmadeStore.DataAccess.Repository.IRepository;
 using HandmadeStore.Models.Models;
+using HandmadeStore.UI.Resources;
 using HandmadeStore.Utility;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
@@ -86,19 +87,19 @@ namespace HandmadeStore.UI.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "Email", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
+            [EmailAddress(ErrorMessageResourceName = "EmailError", ErrorMessageResourceType = typeof(Shared))]
             public string Email { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Display(Name = "Password", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
+            [StringLength(100, ErrorMessageResourceName = "PasswordLength", MinimumLength = 6, ErrorMessageResourceType = typeof(Shared))]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
             public string Password { get; set; }
 
             /// <summary>
@@ -106,20 +107,26 @@ namespace HandmadeStore.UI.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "ConfirmPassword", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
+            [Compare("Password", ErrorMessageResourceName = "CompareError", ErrorMessageResourceType = typeof(Shared))]
             public string ConfirmPassword { get; set; }
 
 
-            [Required]
+            [Display(Name = "Name", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
             public string Name { get; set; }
+            [Display(Name = "City", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
             public string City { get; set; }
-            [DisplayName("Street Address")]
+            [Display(Name = "StreetAddress", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
             public string StreetAdress { get; set; }
-            [DisplayName("Postal Code")]
+            [Display(Name = "PostalCode", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
             public string PostalCode { get; set; }
-
-            [DisplayName("Phone Number")]
+            [Display(Name = "PhoneNumber", ResourceType = typeof(Shared))]
+            [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Shared))]
             public string PhoneNumber { get; set; }
             public string Role { get; set; }
             public int? ShopId { get; set; }
@@ -134,13 +141,13 @@ namespace HandmadeStore.UI.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl = null)
         {
-            if (!await _roleManager.RoleExistsAsync(SD.Role_Admin))
-            {
-                await _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin));
-                await _roleManager.CreateAsync(new IdentityRole(SD.Role_Shop));
-                await _roleManager.CreateAsync(new IdentityRole(SD.Role_Moderator));
-                await _roleManager.CreateAsync(new IdentityRole(SD.Role_Customer));
-            }
+            //if (!await _roleManager.RoleExistsAsync(SD.Role_Admin))
+            //{
+            //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin));
+            //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_Shop));
+            //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_Moderator));
+            //    await _roleManager.CreateAsync(new IdentityRole(SD.Role_Customer));
+            //}
 
             ReturnUrl = returnUrl;
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
@@ -151,11 +158,11 @@ namespace HandmadeStore.UI.Areas.Identity.Pages.Account
                     Text = n,
                     Value = n,
                 }),
-                 ShopList = _unitOfWork.Shop.GetAll().Select(x => new SelectListItem
-                 {
-                     Text = x.Name,
-                     Value = x.Id.ToString(),
-                 })
+                ShopList = _unitOfWork.Shop.GetAll().Select(x => new SelectListItem
+                {
+                    Text = x.Name,
+                    Value = x.Id.ToString(),
+                })
             };
         }
 
@@ -183,10 +190,11 @@ namespace HandmadeStore.UI.Areas.Identity.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
-                    if(Input.Role  == null)
+                    if (Input.Role == null)
                     {
                         await _userManager.AddToRoleAsync(user, SD.Role_Customer);
-                    }else
+                    }
+                    else
                     {
                         await _userManager.AddToRoleAsync(user, Input.Role);
                     }
@@ -207,7 +215,14 @@ namespace HandmadeStore.UI.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        if (User.IsInRole(SD.Role_Admin))
+                        {
+                            TempData["success"] = "New User Created Successfully";
+                        }
+                        else
+                        {
+                            await _signInManager.SignInAsync(user, isPersistent: false);
+                        }
                         return LocalRedirect(returnUrl);
                     }
                 }

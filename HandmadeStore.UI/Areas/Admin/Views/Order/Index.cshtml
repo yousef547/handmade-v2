@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Order";
+}
+
+
+@{
+    var status = Context.Request.Query["status"];
+    var pending = "";
+    var approved = "";
+    var inprocess = "";
+    var completed = "";
+    var all = "";
+
+    switch (status)
+    {
+        case "pending":
+            pending = "active";
+            break;
+        case "approved":
+            approved = "active";
+            break;
+        case "inprocess":
+            inprocess = "active";
+            break;
+        case "completed":
+            completed = "active";
+            break;
+        default:
+            all = "active ";
+            break;
+    }
+}
+
+
+
+<div class="container-fluid p-1">
+    <div class="row pt-1">
+        <div class="p-1">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h2 class="text-primary">Orders List</h2>
+                </div>
+                <div>
+                    <ul class="list-group list-group-horizontal-sm">
+                        <a style="text-decoration:none;" asp-controller="Order"
+                           asp-action="Index" asp-route-status="pending">
+                        <li class="list-group-item bg-gradient @pending">Payment Pending</li>
+                        </a>
+                        <a style="text-decoration:none;" asp-controller="Order"
+                           asp-action="Index" asp-route-status="approved">
+                        <li class="list-group-item bg-gradient @approved">Approved</li>
+                        </a>
+                        <a style="text-decoration:none;" asp-controller="Order"
+                           asp-action="Index" asp-route-status="inprocess">
+                        <li class="list-group-item bg-gradient @inprocess">In Process</li>
+                        </a>
+                        <a style="text-decoration:none;" asp-controller="Order"
+                           asp-action="Index" asp-route-status="completed">
+                        <li class="list-group-item bg-gradient @completed">Completed</li>
+                        </a>
+                        <a style="text-decoration:none;" asp-controller="Order"
+                           asp-action="Index" asp-route-status="all">
+                        <li class="list-group-item bg-gradient @all" >All</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <table id="dataTable" class="table table-bordered table-striped mt-1 w-100">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th class="text-center">
+                        Buyer
+                    </th>
+                    <th class="text-center">
+                        Phone
+                    </th>
+                    <th class="text-center">
+                        Email
+                    </th>
+                    <th class="text-center">
+                        Status
+                    </th>
+                    <th class="text-center">
+                        Totle
+                    </th>
+                    <th class="text-center">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<style>
+    .list-group-item.active,.list-group-item.active:hover{
+        color:black;
+        background:#efa31d;
+        border-color:#efa31d
+    }
+</style>
+
+@section Scripts{
+<script src="~/js/order.js"></script>
+}

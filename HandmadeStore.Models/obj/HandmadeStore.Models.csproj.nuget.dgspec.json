@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {}
+    "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {}
   },
   "projects": {
-    "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
+    "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
+        "projectUniqueName": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
         "projectName": "HandmadeStore.Models",
-        "projectPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
-        "packagesPath": "C:\\Users\\Youssef Mohamed\\.nuget\\packages\\",
-        "outputPath": "E:\\projects\\handmade-v2\\HandmadeStore.Models\\obj\\",
+        "projectPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\HandmadeStore.Models.csproj",
+        "packagesPath": "C:\\Users\\AL_hamd\\.nuget\\packages\\",
+        "outputPath": "D:\\New folder\\MVC\\handmade-v2\\HandmadeStore.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Youssef Mohamed\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AL_hamd\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,8 +55,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -65,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.307\\RuntimeIdentifierGraph.json"
         }
       }
     }

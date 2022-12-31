@@ -1,11 +1,14 @@
 ﻿using HandmadeStore.Data;
 using HandmadeStore.DataAccess.Repository.IRepository;
 using HandmadeStore.Models;
+using HandmadeStore.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HandmadeStore.UI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin+","+SD.Role_Moderator)]
     public class BrandController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
